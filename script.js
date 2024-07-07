@@ -1,29 +1,25 @@
-// Function to load service detail
-function loadServiceDetail(serviceId) {
-    const serviceData = getServiceData(serviceId);
-    if (serviceData) {
-        document.getElementById('service-detail-title').textContent = serviceData.title;
-        document.getElementById('service-detail-description').textContent = serviceData.description;
-        document.getElementById('service-detail-image').src = serviceData.imageUrl;
-        document.getElementById('service-detail-vouches').textContent = `Vouches: ${serviceData.vouches}`;
-        document.getElementById('service-detail').style.display = 'flex'; // Display the detail view
-    }
+// Function to load content from external files
+function loadContent(url) {
+    fetch(url)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('main-content').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading content:', error));
 }
 
-// Function to close service detail
-function closeServiceDetail() {
-    document.getElementById('service-detail').style.display = 'none'; // Hide the detail view
-}
-
-// Event listener for View Details buttons
-document.querySelectorAll('.btn-view-details').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const serviceId = btn.getAttribute('data-service-id'); // Get service ID from button attribute
-        loadServiceDetail(serviceId); // Load details for the selected service
-    });
+// Event listeners to load content on link click
+document.getElementById('about-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+    loadContent('aboutus.html');
 });
 
-// Event listener for Close button in service detail
-document.getElementById('btn-close-detail').addEventListener('click', function() {
-    closeServiceDetail(); // Close the service detail view
+document.getElementById('services-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+    loadContent('services.html');
+});
+
+// Initial content load on page load
+document.addEventListener('DOMContentLoaded', function() {
+    loadContent('aboutus.html'); // Load aboutus.html by default
 });

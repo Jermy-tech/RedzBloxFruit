@@ -1,0 +1,46 @@
+/* Reset and basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #007bff;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+/* Panels styling */
+.panel {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.panel.introduction h2,
+.panel.why-choose-us h2,
+.panel.team h2,
+.panel.contact-us h2 {
+    margin-top: 0;
+}
+
+.panel.introduction ul,
+.panel.why-choose-us ul,
+.panel.team ul,
+.panel.contact-us ul {
+    margin-top: 0;
+}
