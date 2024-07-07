@@ -246,6 +246,9 @@
             })
             .then(response => {
                 if (response.ok) {
+                    // Redirect to PayPal.me with the amount
+                    var paypalMeURL = `https://www.paypal.me/redzzgoat/${amount}`;
+                    window.open(paypalMeURL, '_blank');
                     alert('Payment details sent successfully.');
                 } else {
                     alert('Failed to send payment details.');
